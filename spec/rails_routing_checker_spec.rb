@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe 'RailsRoutingChecker' do
@@ -5,11 +7,11 @@ describe 'RailsRoutingChecker' do
   let(:allow_actions) { klass.send(:allow_actions) }
   let :attr do
     [
-        { controller: 'valid_controller', action: 'index' },
-        { controller: 'valid_controller', action: 'show' },
-        { controller: 'valid_controller', action: 'create' },
-        { controller: 'valid_controller', action: 'update' },
-        { controller: 'valid_controller', action: 'delete' }
+      { controller: 'valid_controller', action: 'index' },
+      { controller: 'valid_controller', action: 'show' },
+      { controller: 'valid_controller', action: 'create' },
+      { controller: 'valid_controller', action: 'update' },
+      { controller: 'valid_controller', action: 'delete' }
     ]
   end
   let :invalid_attr do

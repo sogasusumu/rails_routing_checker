@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'rails_routing_checker/railtie'
 
 module RailsRoutingChecker
@@ -24,8 +25,8 @@ module RailsRoutingChecker
       # @return [String]
       def with_action
         [
-            self[:controller],
-            self[:action]
+          self[:controller],
+          self[:action]
         ].join('#')
       end
     end
@@ -33,7 +34,7 @@ module RailsRoutingChecker
     refine String do
       # @return [Bool]
       def allow?
-        %i(index show create update delete).include?(self)
+        %i[index show create update delete].include?(self)
       end
     end
   end
@@ -43,7 +44,7 @@ module RailsRoutingChecker
   class << self
     def valid!(attr = controller_with_actions, arr = allow_actions)
       forbid_action_hsh(attr, arr).with_actions.tap do |strings|
-        raise(Error.new(strings.to_s)) unless strings.blank?
+        raise Error, strings.to_s if strings.present?
       end
     end
 
@@ -61,7 +62,7 @@ module RailsRoutingChecker
     end
 
     def allow_actions
-      %w(index show create update delete)
+      %w[index show create update delete]
     end
   end
 end

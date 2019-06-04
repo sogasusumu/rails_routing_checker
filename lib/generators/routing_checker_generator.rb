@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RoutingCheckerGenerator < Rails::Generators::NamedBase
   source_root File.expand_path('templates', __dir__)
 
@@ -19,10 +21,9 @@ class RoutingCheckerGenerator < Rails::Generators::NamedBase
 
   # @return [String]
   def file_name
-    puts name
     [
-        base_name,
-        'rb'
+      base_name,
+      'rb'
     ].join('.')
   end
 

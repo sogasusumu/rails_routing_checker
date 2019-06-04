@@ -12,3 +12,6 @@ bundle:
 
 generate:
 	spec/dummy/bin/rails g routing_checker create
+
+lint:
+	bundle exec rubocop lib/ -a

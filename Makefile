@@ -15,3 +15,6 @@ generate:
 
 lint:
 	bundle exec rubocop lib/ -a
+
+test:
+	bundle exec rspec

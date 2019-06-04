@@ -1,7 +1,7 @@
 # RailsRoutingChecker
 `config/initializers/routing_checker.rb`を作成します。  
-routingに、index, show, create, update, delete以外の、
-アクションが設定されている場合、起動時に例外(RailsRoutingChecker::Error)が発生します。
+`routing`に、`index, show, create, update, delete`以外の、
+アクションが設定されている場合、起動時に例外(`RailsRoutingChecker::Error`)が発生します。
 
 ## Usage
     rails g routing_checker create

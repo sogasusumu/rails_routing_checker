@@ -1,24 +1,24 @@
 # RailsRoutingChecker
-Short description and motivation.
+`config/initializers/routing_checker.rb`を作成します。  
+routingに、index, show, create, update, delete以外の、
+アクションが設定されている場合、起動時に例外(RailsRoutingChecker::Error)が発生します。
 
 ## Usage
-How to use my plugin.
+    rails g routing_checker create
+
+    This will create:
+        config/initializers/routing_checker.rb
 
 ## Installation
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'rails_routing_checker'
+gem 'rails_routing_checker', git: 'https://github.com/sogasusumu/rails_routing_checker.git'
 ```
 
 And then execute:
 ```bash
 $ bundle
-```
-
-Or install it yourself as:
-```bash
-$ gem install rails_routing_checker
 ```
 
 ## Contributing
